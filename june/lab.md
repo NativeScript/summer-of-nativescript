@@ -8,7 +8,9 @@ The [NativeScript CLI](https://github.com/NativeScript/NativeScript-cli) lets yo
 
 ## Option #2: Telerik AppBuilder
 
-Telerik AppBuilder is a [paid product](https://www.telerik.com/purchase/appbuilder), but everyone gets a free 30-day trial to evaluate the product. Telerik AppBuilder is part of the [Telerik Platform](http://www.telerik.com/platform), which offers additional tools and services for NativeScript apps—including push notifications, cloud data, analytics, and more.
+Telerik AppBuilder provides a number of tools and services for NativeScript apps—including an in-browser IDE, a Windows IDE, and an extension for Visual Studio. Telerik AppBuilder provides a cloud build service, meaning you can build iOS and Android apps on any OS without worrying about your development machine's system requirements.
+
+Telerik AppBuilder is a [paid product](https://www.telerik.com/purchase/appbuilder), but everyone gets a free 30-day trial to evaluate the product. Telerik AppBuilder is part of the [Telerik Platform](http://www.telerik.com/platform), which offers additional tools and services for NativeScript apps, such as push notifications, cloud data, analytics, and more.
 
 ## Choose an option
 

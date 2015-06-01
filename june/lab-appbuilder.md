@@ -1,8 +1,12 @@
-
+# Summer of NativeScript: July Lab—Telerik AppBuilder
 
 ## What are you learning?
 
 You'll start by learning how to use Telerik AppBuilder—including how to start NativeScript apps, how to deploy them devices, and how see your changes during development. From there you'll start building a basic NativeScript app.
+
+## Step 0: Create a Telerik Platform account
+
+In order to use Telerik AppBuilder you must have a Telerik Platform account. Register for a free 30-day trial at [platform.telerik.com](https://platform.telerik.com).
 
 ## Step 1: Clone the repo
 
