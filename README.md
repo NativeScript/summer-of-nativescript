@@ -12,8 +12,11 @@ And the best part? We'll have three meetups worth of content that you can use. S
 
 ## July Meetup: Welcome to NativeScript
 
-* [Slides to present](july/slides.pptx)
-* [Video of us presenting the slides]()
+* Slides to present
+    * [PowerPoint](july/slides.pptx)
+    * [PDF](july/slides.pdf)
+* Video of us presenting the slides
+    * TODO: Make this
 * [Lab](july/lab.md)
 
 ## August Meetup: Beyond the Basics
