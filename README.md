@@ -2,6 +2,8 @@
 
 **Run a meetup, get some NativeScript stickers!**
 
+![](logo.png)
+
 Summer is here and it's a great time to get excited about building apps NativeScript. Why this summer? Because if you run a NativeScript meetup in July, August, or September and let us know about it, we'll send you a cool pack NativeScript stickers. If you already belong to a group, now's a great time to put a NativeScript meetup on the calendar. If you don't have a group, now's a great time to start one!
 
 Don't know what to present? No worries, we have you covered. We have a set of pre-prepared resources you can choose from. Customizable slide decks? Check. Video recordings of those slides being presented? Check. Hands-on labs you can work through? Check. You can choose the resources that work for you.
