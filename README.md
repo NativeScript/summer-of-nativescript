@@ -8,13 +8,13 @@ Summer is here and it's a great time to get excited about building apps NativeSc
 
 Don't know what to present? No worries, we have you covered. We have a set of pre-prepared resources you can choose from. Customizable slide decks? Check. Video recordings of those slides being presented? Check. Hands-on labs you can work through? Check. You can choose the resources that work for you.
 
-And the best part? We'll have three meetups worth of content that you can use. So you can either choose to run a single meetup to learn the basics, or run all three to dive deep into the NativeScript ecosystem.
+And the best part? We'll have three meetups worth of content that you can use. So you can either choose to run a single meetup to learn the basics, or run all three to dive deep into the NativeScript ecosystem. July's content is available now; check back later this summer for the other two months.
 
 ## July Meetup: Welcome to NativeScript
 
-* [Slides to present]()
+* [Slides to present](july/slides.pptx)
 * [Video of us presenting the slides]()
-* [Lab]()
+* [Lab](july/lab.md)
 
 ## August Meetup: Beyond the Basics
 
