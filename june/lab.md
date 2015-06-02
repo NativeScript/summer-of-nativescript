@@ -1,4 +1,4 @@
-# Summer of NativeScript: July Lab
+# Summer of NativeScript: June Lab
 
 ## What you're building
 

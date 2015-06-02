@@ -16,11 +16,13 @@ And the best part? We're providing *three* meetups worth of content so you can s
 
 ## Meetup #1: Welcome to NativeScript
 
+The first meetup is all about introducing NativeScript. The slides explain what NativeScript is and how to builds apps with it. The hands-on labs walk you through the basics of starting a basic app and making changes to it.
+
 * Customizable slides
     * [PowerPoint](june/slides.pptx)
     * [PDF](june/slides.pdf)
 * Video
-    * TODO: Make this
+    * [YouTube](https://www.youtube.com/watch?v=Rw7oAu3yiik)
 * Lab
     * [Instructions](june/lab.md)
 
