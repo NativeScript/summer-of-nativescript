@@ -1,5 +1,15 @@
 # Summer of NativeScript: July Lab
 
+## What you're building
+
+In these series of labs you'll be building JustMeme: a NativeScript-built iOS and Android app for creating memes and sharing them with your friends. If you want to see what the finished app looks like, you can [check it out on GitHub](https://github.com/NativeScript/sample-JustMeme), or [download it from the iOS app store](https://itunes.apple.com/us/app/justmeme/id989340374?mt=8).
+
+![](ss.png)
+![](ss2.png)
+![](ss3.png)
+
+## Getting started
+
 There are two ways to use NativeScript: through its CLI or through Telerik AppBuilder. Even though NativeScript itself is the same regardless of the option you choose, the way you interace with NativeScript—how you run your app, how you change configuration files, and so forth—differs based on the interface you choose. Both options are summarized below.
 
 ## Option #1: NativeScript CLI
@@ -14,7 +24,7 @@ Telerik AppBuilder is a [paid product](https://www.telerik.com/purchase/appbuild
 
 ## Choose an option
 
-Click one of the links below to continue with the lab, or go through both to help you decide which interface to use.
+Click one of the links below to continue with the lab, or try both to help you decide which interface to use.
 
 [**Go through the NativeScript CLI lab**](lab-cli.md)
 [**Go through the Telerik AppBuilder lab**](lab-appbuilder.md)
