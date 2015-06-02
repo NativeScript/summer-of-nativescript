@@ -2,11 +2,11 @@
 
 **Run a meetup, get some NativeScript stickers!**
 
-![](logo.png)
+![](images/logo.png)
 
 Summer is here and it's a great time to get excited about building apps NativeScript. Why this summer? Because **if you run a NativeScript meetup in July, August, or September and let us know about it, we'll send you a cool pack of NativeScript stickers!**
 
-![](stickers.jpg)
+![](images/stickers.jpg)
 
 If you already belong to a meetup group, now's a great time to put a NativeScript meetup on the calendar. If you don't have a group, now's a great time to start one.
 
