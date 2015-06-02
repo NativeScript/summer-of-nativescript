@@ -26,5 +26,5 @@ Telerik AppBuilder is a [paid product](https://www.telerik.com/purchase/appbuild
 
 Click one of the links below to continue with the lab, or try both to help you decide which interface to use.
 
-[**Go through the NativeScript CLI lab**](lab-cli.md)
-[**Go through the Telerik AppBuilder lab**](lab-appbuilder.md)
+* [**Go through the NativeScript CLI lab**](lab-cli.md)
+* [**Go through the Telerik AppBuilder lab**](lab-appbuilder.md)
