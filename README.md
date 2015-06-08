@@ -4,9 +4,7 @@
 
 ![](images/logo.png)
 
-Summer is here and it's a great time to get excited about building apps NativeScript. Why this summer? Because **if you run a NativeScript meetup in July, August, or September and let us know about it, we'll send you a cool pack of NativeScript stickers!**
-
-![](images/stickers.jpg)
+Summer is here and it's a great time to get excited about building apps with NativeScript. Why this summer? Because **if you run a NativeScript meetup in July, August, or September and let us know about it, we'll send you a cool pack of NativeScript stickers!**
 
 If you already belong to a meetup group, now's a great time to put a NativeScript meetup on the calendar. If you don't have a group, now's a great time to start one.
 
@@ -19,20 +17,20 @@ And the best part? We're providing *three* meetups worth of content so you can s
 The first meetup is all about introducing NativeScript. The slides explain what NativeScript is and how to builds apps with it. The hands-on labs walk you through the basics of starting a basic app and making changes to it.
 
 * Customizable slides
-    * [PowerPoint](june/slides.pptx)
-    * [PDF](june/slides.pdf)
+    * [PowerPoint](july/slides.pptx)
+    * [PDF](july/slides.pdf)
 * Video
     * [YouTube](https://www.youtube.com/watch?v=Rw7oAu3yiik)
 * Lab
-    * [Instructions](june/lab.md)
+    * [Instructions](july/lab.md)
 
 ## Meetup #2: Beyond the Basics
 
-Coming soon! Check back in July.
+Coming soon! Check back in August.
 
 ## Meetup #3: Diving Deep
 
-Coming soon! Check back in August.
+Coming soon! Check back in September.
 
 ## Stickers!
 
