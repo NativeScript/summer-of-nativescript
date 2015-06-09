@@ -2,7 +2,7 @@
 
 ## What are you learning?
 
-You'll start by learning how to use NativeScript CLI AppBuilder—including how to start NativeScript apps, how to deploy them emulators, and how see your changes during development. From there you'll start building a basic NativeScript app.
+In this lesson you'll learn how to use the NativeScript CLI—including how to start NativeScript apps, how to deploy them emulators, and how see your changes during development. From there you'll start building a basic NativeScript app.
 
 ## Step 0: Install and setup the NativeScript CLI
 
@@ -18,7 +18,7 @@ When you're done run `nativescript` or `tns` from your terminal of choice.
 $ tns
 ```
 
-If you see a big list of commands you're ready to go.
+If you see the big list of commands shown below you're ready to go.
 
 ```
 $ tns
@@ -39,7 +39,7 @@ $ tns
 Next, clone the repo that contains the starting point for this app:
 
 ```
-$ git clone https://github.com/tjvantoll/summer-of-nativescript-lab-1.git
+$ git clone https://github.com/tjvantoll/summer-of-nativescript-lab.git
 ```
 
 ## Step 2: Add platforms
