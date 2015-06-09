@@ -31,7 +31,7 @@ Use the links below to get started building apps with NativeScript. Feel free to
 
 ## Recommended reading
 
-After going through the labs, here are some articles you might want to read to learn more about NativeScript:
+After going through the lab, here are some articles you might want to read to learn more about NativeScript:
 
 * [Getting Started with NativeScript](http://developer.telerik.com/featured/getting-started-nativescript/)
 * [How NativeScript Works](http://developer.telerik.com/featured/nativescript-works/)
