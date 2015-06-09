@@ -1,3 +1,3 @@
-# Summer of NativeScript: July Lab
+# Summer of NativeScript: August Lab
 
 Coming soon
