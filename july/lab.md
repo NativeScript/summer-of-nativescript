@@ -2,7 +2,7 @@
 
 ## What you're building
 
-In these series of labs you'll be building JustMeme: a NativeScript-built iOS and Android app for creating memes and sharing them with your friends. If you want to see what the finished app looks like, you can [check it out on GitHub](https://github.com/NativeScript/sample-JustMeme), or [download it from the iOS app store](https://itunes.apple.com/us/app/justmeme/id989340374?mt=8).
+In the Summer of NativeScript labs you'll be building parts of JustMeme: a NativeScript-built iOS and Android app for creating memes and sharing them with your friends. If you want to see what the finished app looks like, you can [check out the app's source on GitHub](https://github.com/NativeScript/sample-JustMeme), or [download the app from the iOS App Store](https://itunes.apple.com/us/app/justmeme/id989340374?mt=8).
 
 ![](ss.png)
 ![](ss2.png)
@@ -10,7 +10,7 @@ In these series of labs you'll be building JustMeme: a NativeScript-built iOS an
 
 ## Getting started
 
-There are two ways to use NativeScript: through its CLI or through Telerik AppBuilder. Even though NativeScript itself is the same regardless of the option you choose, the way you interace with NativeScript—how you run your app, how you change configuration files, and so forth—differs based on the interface you choose. Both options are summarized below.
+There are two ways to use NativeScript: through its CLI or through [Telerik AppBuilder](http://www.telerik.com/appbuilder). Although the NativeScript framework itself is the same regardless of whether you use the CLI or AppBuilder, the way you interace with NativeScript—how you run your app, how you change configuration files, and so forth—differs based on the interface you choose.
 
 ## Option #1: NativeScript CLI
 
@@ -22,9 +22,9 @@ Telerik AppBuilder provides a number of tools and services for NativeScript apps
 
 Telerik AppBuilder is a [paid product](https://www.telerik.com/purchase/appbuilder), but everyone gets a free 30-day trial to evaluate the product. Telerik AppBuilder is part of the [Telerik Platform](http://www.telerik.com/platform), which offers additional tools and services for NativeScript apps, such as push notifications, cloud data, analytics, and more.
 
-## Choose an option
+## Start an app
 
-Click one of the links below to continue with the lab, or try both to help you decide which interface to use.
+Use the links below to get started building apps with NativeScript. Feel free to continue using the interface you're most comfortable with (CLI or AppBuilder), or to go through both to help you decide which interface to use.
 
 * [**Go through the NativeScript CLI lab**](lab-cli.md)
 * [**Go through the Telerik AppBuilder lab**](lab-appbuilder.md)

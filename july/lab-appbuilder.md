@@ -2,11 +2,11 @@
 
 ## What are you learning?
 
-You'll start by learning how to use Telerik AppBuilder—including how to start NativeScript apps, how to deploy them devices, and how see your changes during development. From there you'll start building a basic NativeScript app.
+In this lesson you'll learn how to use Telerik AppBuilder to develop NativeScript apps—including how to start NativeScript apps, how to deploy them devices, and how see your changes during development. From there you'll start building a basic app.
 
 ## Step 0: Create a Telerik Platform account
 
-In order to use Telerik AppBuilder you must have a Telerik Platform account. Register for a free 30-day trial at [platform.telerik.com](https://platform.telerik.com).
+In order to use Telerik AppBuilder you must have a Telerik Platform account. Register for a free 30-day trial at [platform.telerik.com](https://platform.telerik.com). You can learn more about AppBuilder pricing at <https://www.telerik.com/purchase/appbuilder>.
 
 ## Step 1: Clone the repo
 
@@ -79,4 +79,4 @@ This lab used an `<Image>` element, but there are numerous other UI widgets you 
 
 ### Play with layouts
 
-In the next lab you'll learn how to use layouts to arrange your UI elements on the screen, but if you have time try playing around with the [`<StackLayout>`](http://docs.nativescript.org/ApiReference/ui/layouts/stack-layout/HOW-TO.html), and [`<GridLayout>`](http://docs.nativescript.org/ApiReference/ui/layouts/grid-layout/HOW-TO.html) elements.
+In the next lab you'll learn how to use layouts to arrange your UI elements on the screen, but if you have time try playing around with the [`<StackLayout>`](http://docs.nativescript.org/ApiReference/ui/layouts/stack-layout/HOW-TO.html), and [`<GridLayout>`](http://docs.nativescript.org/ApiReference/ui/layouts/grid-layout/HOW-TO.html) elements, or read our article on [demystifying NativeScript Layouts](http://developer.telerik.com/featured/demystifying-nativescript-layouts/).
