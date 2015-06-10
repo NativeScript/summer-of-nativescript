@@ -20,7 +20,7 @@ The first meetup is all about introducing NativeScript. The slides explain what 
     * [PowerPoint](july/slides.pptx)
     * [PDF](july/slides.pdf)
 * Video
-    * [YouTube](https://www.youtube.com/watch?v=Rw7oAu3yiik)
+    * [YouTube](https://www.youtube.com/watch?v=bFqqRRuhSEc)
 * Lab
     * [Instructions](july/lab.md)
 
