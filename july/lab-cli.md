@@ -73,11 +73,47 @@ After adding platform(s), you're all set to run the sample app and see what it l
 $ tns run ios --emulator
 ```
 
+If all went well you should see something like this:
+
+![](ios-emulator.png)
+
+Next run your app on Android:
+
+```
+$ tns run android --emulator
+```
+
+If all went well you should see your app running in an Android emulator:
+
+![](android-emulator.png)
+
 ## Step 4: Make changes
 
-...
+Now that you have your app on your device let's make some changes to it. Start by opening the `app/views/splashscreen/splashscreen.xml` file in your text editor of choice. You should see a simple file that looks like this:
 
-## Step 5: (Optional) Explore
+```xml
+<Page>
+    <Label text="Hello NativeScript!" />
+</Page>
+```
+
+Change the `<Label>` element's `text` attribute, for instance `<Label text="OMG OMG OMG" />`, and then return to your terminal to run `tns run android --emulator` or `tns run ios --emulator` again. You should see the change reflected in your emulator.
+
+> **Note**: In the upcoming NativeScript 1.2 release (~July), the NativeScript CLI will automatically reload your app after every change (see <https://github.com/NativeScript/ios-runtime/issues/97>). If you're interested in this type of setup today, try [this Sublime Text workflow](http://developer.telerik.com/featured/a-nativescript-development-workflow-for-sublime-text/), or [this nativescript-emulator-reload npm module](https://www.npmjs.com/package/nativescript-emulator-reload).
+
+## Step 5: Using UI widgets
+
+NativeScript provides a number of UI widgets you can use to build your apps. You've seen one of these already (`<Label>`), now let's add a few more. Start by changing your splashscreen.xml file to use the code below:
+
+```xml
+<Page>
+    <Image src="~/images/splashScreenBackground.png" stretch="aspectFill" />
+</Page>
+```
+
+Run your app to see this change in action. The `<Image>` element's `src` attribute points at an image within the project, and the `stretch` attribute controls how NativeScript should stretch the image when it places it on the screen. All UI widgets have an API reference and a how-to guide. For example here are the `<Image>` element's [API docs](http://docs.nativescript.org/ApiReference/ui/image/Image.html) and [how-to reference](http://docs.nativescript.org/ApiReference/ui/image/HOW-TO.html).
+
+## Step 6: (Optional) Explore
 
 That's the end of this lab. In the next lab you'll build a more complex page that uses data binding, CSS styling, and more. If you have some extra time at the end of this lab, here are a few things you can play around with:
 
