@@ -1,4 +1,4 @@
-# Summer of NativeScript: June Lab—NativeScript CLI
+# Summer of NativeScript: July Lab—NativeScript CLI
 
 ## What are you learning?
 
@@ -40,6 +40,12 @@ Next, clone the repo that contains the starting point for this app:
 
 ```
 $ git clone https://github.com/tjvantoll/summer-of-nativescript-lab.git
+```
+
+Then change into the first lab's directory so you can work with this lab's project:
+
+```
+$ cd lab-1
 ```
 
 ## Step 2: Add platforms
