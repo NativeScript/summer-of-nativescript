@@ -1,6 +1,6 @@
 # Summer of NativeScript
 
-**Run a meetup, get a NativeScript t-shirt and a pack of stickers!**
+**Run a meetup, get a NativeScript t-shirt and a pack of NativeScript stickers!**
 
 ![](images/logo.png)
 
