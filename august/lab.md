@@ -229,9 +229,7 @@ Start by replacing each of the two `<Label>` elements currently within your `<Ta
 </WrapLayout>
 ```
 
-<!--
-
-Now we're going to populate these WrapLayouts from code since we don't have a clue what kind of images we're working with. That means we will need to be able to get the correct element from JavaScript and add elements to it. Let's assign each WrapLayout a unique id that we can later use.
+Next you're going to add images to each of these layouts. To do so you'll need to assign a unique `id` attribute to each `<WrapLayout>` so you can reference the element from JavaScript. Change the first `<WrapLayout>` to have an `id` of `"templateContainer"`, and the second to have an `id` of `"myMemeContainer"`.
 
 ```xml
 <WrapLayout id="templateContainer">
@@ -243,7 +241,7 @@ and
 <WrapLayout id="myMemeContainer">
 ```
 
-Easy enough. Let's also pretty this up slightly. Our images could be quite large. To make sure things don't get out of hand and we're scrolling forever, let's just set their height to only 100px. To this we can add an attribute to our WrapLayout called `itemHeight` like this `itemHeight="100"`.
+Easy enough. Let's also pretty this up slightly. Our images could be quite large, so to keep things reasonable let's pick a fairly small size to display them with. To do this add an `itemHeight` attribute to each of the two `<WrapLayout>` elements:
 
 ```xml
 <WrapLayout id="templateContainer" itemHeight="100">
@@ -252,7 +250,7 @@ Easy enough. Let's also pretty this up slightly. Our images could be quite large
 
 **Adding the ScrollView**
 
-Of course the massive popularity of such a smash hit has our app with 10s of memes. To make our WrapLayout scroll, we just need to wrap the WrapLayout with a 'ScrollView'. This will take care of the black magic for us.
+Next let's make sure the images can scroll, which is as simple as wrapping each `<WrapLayout>` with a `<ScrollView>` element:
 
 ```xml
 <ScrollView>
@@ -261,34 +259,34 @@ Of course the massive popularity of such a smash hit has our app with 10s of mem
 </ScrollView>
 ```
 
-**Run the application**
-
-Well not much will happen other than making sure we didn't fat finger something. Our completed TabView should look similar to the following:
-
-***home.xml***
+At this point not much has happened but you have all the infrastructure in place to add images in the next step. To make sure you haven't fat fingered something, here's what the final `home.xml` should look like:
 
 ```xml
-<TabView>
-	<TabView.items>
-		<TabViewItem title="Templates">
-			<TabViewItem.view>
-				<ScrollView>
-					<WrapLayout id="templateContainer" itemHeight="100">
-					</WrapLayout>
-				</ScrollView>
-			</TabViewItem.view>
-		</TabViewItem>
-		<TabViewItem title="My Memes">
-			<TabViewItem.view>
-				<ScrollView>
-					<WrapLayout id="myMemeContainer" itemHeight="100">
-					</WrapLayout>
-				</ScrollView>
-			</TabViewItem.view>
-		</TabViewItem>
-	</TabView.items>
-</TabView>
+<Page>
+	<TabView>
+		<TabView.items>
+			<TabViewItem title="Templates">
+				<TabViewItem.view>
+					<ScrollView>
+						<WrapLayout id="templateContainer" itemHeight="100">
+						</WrapLayout>
+					</ScrollView>
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="My Memes">
+				<TabViewItem.view>
+					<ScrollView>
+						<WrapLayout id="myMemeContainer" itemHeight="100">
+						</WrapLayout>
+					</ScrollView>
+				</TabViewItem.view>
+			</TabViewItem>
+		</TabView.items>
+	</TabView>
+</Page>
 ```
+
+<!--
 
 ### Step #5 - Handle Page Events
 
