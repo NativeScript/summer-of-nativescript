@@ -178,114 +178,58 @@ exports.load = function(args) {
 
 If all went well you should see the application startup, pause on your splashscreen for about a second, and then redirect to the `home.xml` page.
 
-
-
-
-
-
-
-
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Step #4 - Laying out home.xml
 
 Welcome home! Now that you're here it's time to get our house setup. Let's start by looking at what we're going to build.
 
-![](../ss.png)
+![](../july/ss.png)
 
-This screen is comprised of a few different elements.
-1. [TabView](http://docs.nativescript.org/ApiReference/ui/tab-view/HOW-TO.html). This is what we're using to "swap" between the meme templates and the memes you've created.
-2. In each [TabViewItem](http://docs.nativescript.org/ApiReference/ui/tab-view/TabViewItem.html), we have a [WrapLayout](http://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.html). We will dynamically populate this based on the images that we find.
-3. Now assuming this is the most popular app in the AppStore that means we will have more memes to show than the screen can fit. We can fix that by introducing a [ScrollView](http://docs.nativescript.org/ApiReference/ui/scroll-view/HOW-TO.html).
+This screen is comprised of a few different elements:
+
+* 1) [`<TabView>`](http://docs.nativescript.org/ApiReference/ui/tab-view/HOW-TO.html). This is what you'll use to "swap" between the meme templates and the memes you've created.
+* 2) Each `<TabView>` has a [`<TabViewItem>`](http://docs.nativescript.org/ApiReference/ui/tab-view/TabViewItem.html) that contains each individual view's content.
+* 3) Each `<TabViewItem>` uses a [`<WrapLayout>`](http://docs.nativescript.org/ApiReference/ui/layouts/wrap-layout/HOW-TO.html). You will populate this element with images.
+* 4) A [`<ScrollView>`](http://docs.nativescript.org/ApiReference/ui/scroll-view/HOW-TO.html) so the view scrolls when you have too many images to fit on the screen.
+
+Let's add each of these one at a time.
 
 **Adding the TabView**
 
-Simple enough, right? Since our view is really just a TabView, we don't need to worry about our overall layout here. Let's replace the Label we created earlier with a TabView.
+Open your `./components/home/home.xml` file with the following code:
 
 ```xml
-<TabView>
-</TabView>
+<Page>
+	<TabView>
+		<TabView.items>
+			<TabViewItem title="Templates">
+				<TabViewItem.view>
+					<Label text="Here's where the templates go" />
+				</TabViewItem.view>
+			</TabViewItem>
+			<TabViewItem title="My Memes">
+				<TabViewItem.view>
+					<Label text="Here's where the memes go" />
+				</TabViewItem.view>
+			</TabViewItem>
+		</TabView.items>
+	</TabView>
+</Page>
 ```
 
-Not hard, but also not useful. Let's add our two tab items:
-* Templates
-* MyMemes
-
-We need to define an items array. In that it will have two Items (Templates, MyMemes), and each of those will need a view.
-
-```xml
-<TabView.items>
-  <TabViewItem>
-    <TabViewItem.view>
-      <Label text="templates" />
-    </TabViewItem.view>
-  </TabViewItem>
-  <TabViewItem>
-    <TabViewItem.view>
-      <Label text="memes" />
-    </TabViewItem.view>
-  </TabViewItem>
-</TabView.items>
-```
-
-If you run that, you will see two tabs, but without any titles. Let's add a `title` attribute to our TabViewItem. Our first TabViewItem should be:
-
-```xml
-<TabViewItem title="Templates">
-```
-
-and the second:
-
-```xml
-<TabViewItem title="My Memes">
-```
-
-The completed TabView should look like the following:
-
-```xml
-<TabView>
-	<TabView.items>
-		<TabViewItem title="Templates">
-			<TabViewItem.view>
-				<Label text="templates" />
-			</TabViewItem.view>
-		</TabViewItem>
-		<TabViewItem title="My Memes">
-			<TabViewItem.view>
-				<Label text="memes" />
-			</TabViewItem.view>
-		</TabViewItem>
-	</TabView.items>
-</TabView>
-```
-
-**Run the application**
-
-  You should see an empty TabView and be able to navigate between them.
+If you run this app you should see two tabs that you can navigate between. At the moment each tab only has a simple label, so let's add something a bit more exciting.
 
 **Adding the WrapLayout**
 
-With out tabs in place we now need to move onto how we're going to layout the images that we find. For this we're going to use a WrapLayout. The WrapLayout will work great for us here. It will flow our images across and down without us needing to worry about anything when the phone is in portrait or landscape mode.
+With your tabs in place the next step is to add a `<WrapLayout>` that you'll use to display images. The `<WrapLayout>` takes care of wrapping images that don't fit on the screen into a new row; it even elegantly handles switching from portrait to landscape mode.
 
-Let's add a WrapLayout to each of our TabViewItem.view.
+Start by replacing each of the two `<Label>` elements currently within your `<TabViewItem.view>` elements with the `<WrapLayout>` below:
 
 ```xml
 <WrapLayout>
 </WrapLayout>
 ```
+
+<!--
 
 Now we're going to populate these WrapLayouts from code since we don't have a clue what kind of images we're working with. That means we will need to be able to get the correct element from JavaScript and add elements to it. Let's assign each WrapLayout a unique id that we can later use.
 
@@ -346,7 +290,7 @@ Well not much will happen other than making sure we didn't fat finger something.
 </TabView>
 ```
 
-### Step #6 - Handle Page Events
+### Step #5 - Handle Page Events
 
 **onLoaded**
 
@@ -642,3 +586,4 @@ Feel free to browse around the source found in our master to see what all we did
 
 Enjoy
 
+-->
