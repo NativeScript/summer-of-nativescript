@@ -1,4 +1,4 @@
-# Summer of NativeScript: June Lab—Telerik AppBuilder
+# Summer of NativeScript: July Lab—Telerik AppBuilder
 
 ## What are you learning?
 
