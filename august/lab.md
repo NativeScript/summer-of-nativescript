@@ -399,34 +399,28 @@ exports.navigatedTo = function(args) {
 
 Run your app and you should now have a home screen with a bunch of images on it.
 
-<!--
 ### Step #6 - Tap that image!
 
-Look we have images but they do nothing. Expected, right? After all it's just an image, they have no inherit behaviors and we didn't actually add anything to them. Good time to introduce Gestures!
+You have images... but they do nothing. Expected, right? After all it's just an image—they have no inherit behaviors and we didn't actually add anything to them. This is a good time to introduce Gestures.
 
-Gestures are
-	> AWESOME
-
-Let's pull in our Gestures Module so we can use it.
+Gestures are AWESOME. Start by pulling in the NativeScript gestures module in your `home.js` file so you can use it:
 
 ```JavaScript
 var gesturesModule = require("ui/gestures");
 ```
 
-Now what we want to do is add a `tap` event to each image. Then when the user taps it, we're going to call a new function (`templateSelected`) whose only job is to take an ImageSource and navigate the user to another page you'll be building later (create meme), passing that ImageSource.
+Next what you need to do is add a `tap` event to each image. Then when the user taps it, you're going to call a new function (`templateSelected()`) whose only job is to take an ImageSource and navigate the user to another page you'll be building later (create meme).
 
-Let's first start by creating an empty function called `templateSelected` that accepts an ImageSource. We'll add its behavior later.
+Start by creating an empty function called `templateSelected()` that accepts an ImageSource. You'll add its behavior later:
 
 ```JavaScript
-function templateSelected(selectedImageSource) {	
+function templateSelected(selectedImageSource) {
 }
 ```
 
-Next we need to connect the two, the image's tap to the `templateSelected` function. 
+Next you need to connect the image's tap to the `templateSelected()` function. To do so let's go back to the callback you created to pass to `templates.getTemplates()`, specifically the `image` variable that has a reference to the `<Image>` element.
 
-Staying in the callback that we created to pass to `templates.getTemplates`, let's continue to extend image.
-
-Image has a method called `observe`. Guess what `observe` takes? Yep, gestures, and a callback. Perfect! Let's pass it a tap gesture and a new callback, which in turn calls `templateSelected` passing along our image.
+The `<Image>` element has a method called `observe()`. Guess what `observe` takes? A gesture... and a callback. Perfect! Let's pass it a tap gesture and a new callback, which in turn calls `templateSelected()` passing along our image. Add the following code to the bottom of your `templates.getTemplates()` callback:
 
 ```JavaScript
 image.observe(gesturesModule.GestureTypes.Tap, function () { 
@@ -434,17 +428,15 @@ image.observe(gesturesModule.GestureTypes.Tap, function () {
 });
 ```
 
-**Run the application**
-
-Go ahead and tap. Tap, Tap, Tap. Blerge, boring. Let's add a little behavior to our empty templateSelected.
+Next let's add a little code to `templateSelected()` to make sure this is all working:
 
 ```JavaScript
-alert("HI THERE!");
+function templateSelected(selectedImageSource) {
+	alert("HI THERE!");
+}
 ```
 
-Run again? Feel a little better? You should now see a dialog when you tap an image.
-
-**Completed populateTemplate**
+If all went well you should now see an alert dialog when you tap an image. If something went wrong refer to the code below. It's the final version of the `populateTemplate()` function:
 
 ```JavaScript
 function populateTemplates() {
@@ -462,6 +454,8 @@ function populateTemplates() {
 	});
 }
 ```
+
+<!--
 
 ### Step #7 - Navigate to Create Meme
 
