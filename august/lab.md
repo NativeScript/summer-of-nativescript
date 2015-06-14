@@ -423,7 +423,7 @@ Next you need to connect the image's tap to the `templateSelected()` function. T
 The `<Image>` element has a method called `observe()`. Guess what `observe` takes? A gesture... and a callback. Perfect! Let's pass it a tap gesture and a new callback, which in turn calls `templateSelected()` passing along our image. Add the following code to the bottom of your `templates.getTemplates()` callback:
 
 ```JavaScript
-image.observe(gesturesModule.GestureTypes.Tap, function () { 
+image.observe(gesturesModule.GestureTypes.tap, function () { 
 	templateSelected(imageSource); 
 });
 ```
@@ -446,7 +446,7 @@ function populateTemplates() {
 		var image = new imageModule.Image();
 		image.imageSource = imageSource;
 	
-		image.observe(gesturesModule.GestureTypes.Tap, function () { 
+		image.observe(gesturesModule.GestureTypes.tap, function () { 
 			templateSelected(imageSource); 
 		});
 		
