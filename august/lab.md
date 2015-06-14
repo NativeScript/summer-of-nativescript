@@ -455,24 +455,16 @@ function populateTemplates() {
 }
 ```
 
-<!--
-
 ### Step #7 - Navigate to Create Meme
 
-Now we've already learned about how to navigate the user from one page to another, but this time things are a bit different. This time we need to pass the ImageSource of the image the user tapped. We need to pass this image along to the create meme page such that that page can later edit it.
+Now you've already learned about how to navigate the user from one page to another, but this time things are a bit different. This time we need to pass the ImageSource of the image the user tapped. We need to pass this image along to the create meme page such that that page can later edit it.
 
-Earlier we added the tapGesture to each image, and when it was tapped we called `tempalteSelected(imageSource)`, where we passed that ImageSource to that function.
+Earlier you added the tap gesture to each image, and when it was tapped you called `templateSelected(imageSource)`, where you passed that ImageSource to that function.
 
-Time for you to try and make that function.
-
-**Run the application**
-
-At this point you should be able to run your application, see the images populate the WrapLayout, and when you tap an image we should be trying to navigate the user to the create meme page or blow up if we don't have a page as a placeholder
-
-**Completed templateSelected function**
+Let's change that `templateSelected()` function from showing an alert to navigating the user to a new page:
 
 ```JavaScript
-function templateSelected(selectedImageSource) {	
+function templateSelected(selectedImageSource) {
 	frameModule.topmost().navigate({
 		moduleName: "./components/create-meme/create-meme",
 		context: selectedImageSource,
@@ -481,6 +473,9 @@ function templateSelected(selectedImageSource) {
 }
 ```
 
+At this point you should be able to run your application, see the images populate the `<WrapLayout>`. When you tap an image you now try to navigate the user to the create meme page... but for now you'll blow up, as the create meme page does not exist yet. Creating the create meme page is the topic of the next lab.
+
+<!-- 
 ### Step #8 - Extra Credit - Clearing the screen.
 
 Earlier we created a function which would fire when the `navigatedTo` event fires. We did that to keep the images fresh every time the user is navigated to our home page.
