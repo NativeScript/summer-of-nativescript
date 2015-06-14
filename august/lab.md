@@ -286,13 +286,13 @@ At this point not much has happened but you have all the infrastructure in place
 </Page>
 ```
 
-<!--
-
 ### Step #5 - Handle Page Events
+
+Now that you have the XML of this page setup, let's add some JavaScript to make this page to something more interesting.
 
 **onLoaded**
 
-We need to get our page setup. To do such, we're going to start with implementing view's `loaded` event. We do so by adding the `loaded` attribute to our home.xml page element. 
+Let's start by implementing the view's `loaded` event on the home page. You do so by adding the `loaded` attribute to your `home.xml`'s `<Page>` element:
 
 ***home.xml***
 
@@ -302,7 +302,7 @@ We need to get our page setup. To do such, we're going to start with implementin
 	loaded="load">
 ```
 
-Let's implement that `load` event we just told our page to call. We will also take the page object and put it in scope so that we can use it from other functions.
+Next let's implement that `load` event you just told your page to call. Start by pasting the code below in your `home.js* file. At the moment all this code does is save off the page object which you'll need momentarily.
 
 ***home.js***
 
@@ -315,9 +315,9 @@ exports.load = function(args) {
 
 **navigatedTo**
 
-Now our page's `loaded` event might not fire each time we navigate the user to a given page. A page doesn't just unload when a user navigates away.
+Your page's `loaded` event might not fire each time the user navigates to a given page. A page doesn't just unload when a user navigates away.
 
-For our scenario we want to refresh all of the images every time a user is taken to the home page. To achieve this, let's also implement the page's `navigatedTo` event. It's here where we can populate/refresh our screen every time we send our users to the home page.
+For our scenario we want to load all of the images every time a user is taken to the home page. To achieve this, let's also implement the page's `navigatedTo` event. Here you can populate/refresh the home screen every time we navigate the user to this page. Replace your `home.xml` file's `<Page>` tag with the code below:
 
 ***home.xml***
 
@@ -328,6 +328,8 @@ For our scenario we want to refresh all of the images every time a user is taken
 	navigatedTo="navigatedTo">
 ```
 
+And add the following to the bottom of your `home.js` file:
+
 ***home.js***
 
 ```JavaScript
@@ -337,104 +339,67 @@ exports.navigatedTo = function(args) {
 
 ### Step #6 - Adding Widgets!
 
-Now this is where the fun happens. In short, we're going to dynamically build the images seen in our WrapLayout. We'll get those Memes from two different sources:
+This is where the fun happens. In short, you're going to dynamically build the images in your `<WrapLayout>`. You'll get those memes from two different sources:
 
-* First from our app itself. As it turns our we've included a few templates so the app just didn't look empty on its first start.
-* Next from the cloud. As you know, JustMeme is the best social Meme app in the entire world, so we'll need to call those services and get our images.
+* First from your app itself. As it turns our we've included a few templates directly within the app itself.
+* Next from the cloud. We setup a backend service that you can call to get more images to append to the list.
 
-Let's add a function called `populateTemplates`. We can use this function to get our memes and build our UI tree.
+Start by adding a function called `populateTemplates()`. You'll use this function to get the meme images and build your UI tree.
 
 ```JavaScript
 function populateTemplates() {
 }
 ```
 
-Now before we get our memes we'll need reference to the WrapLayout that we plan to populate. Earlier when we assigned one of our WrapLayouts with an id of `tempalateContainer`. Also when our page is loaded, we grabbed our page object and saved that to `_page`. On that object is a great function called `getViewById`. As you might guess, we just need to call that by passing the id of the element we would like to have a reference to, in our case that WrapLayout.
+Now before you get the memes you need to get a reference to the `<WrapLayout>` you're going to populate with images. Earlier, when you assigned one of your `<WrapLayout>`s with an `id` of `"tempalateContainer"`. Also in the `load` function you saved off a reference to the page object in a `_page` variable. On that object is a great function called `getViewById()`. As you might guess, you just need to call that by passing the `id` of the element you would like to have a reference to, in this case the `<WrapLayout>`. Add the code below as the first line of `populateTemplates()`:
 
 ```JavaScript
 var container = _page.getViewById("templateContainer");
 ```
 
-With a reference to our container (the WrapLayout element), we just need to populate it with some memes.
+With a reference to the container (the `<WrapLayout>` element), you just need to populate it with some memes.
 
-Since our time together is short, we've actually already provided the logic to interact with local storage, call our services, and such. Take a look in the shared folder. You will find ./shared/templates/templates.js. This is a API that we've created to help you manage templates. It also depends on ./shared/everlive/everlive.js which is our wrapper for calling Telerik's Backend Services.
+Since our time together is short, we've actually already provided the logic to interact with local storage, call our services, and such. Take a look in the `shared` folder. You will find a `./shared/templates/templates.js` file. This is a API that we've created to help you manage templates. It also depends on `./shared/everlive/everlive.js` which is our wrapper for calling our backend.
 
-Having said that, we still have work to do. Let's add a reference to templates.js
+Having said that, you still have work to do. Add a reference to `templates.js` at the top of your `home.js` file:
 
 ```JavaScript
 var templates = require("../../shared/templates/templates");
 ```
 
-Since we're adding new modules let's also add the Image module.
+Also add a reference to the Image module, which you'll need in a minute:
 
 ```JavaScript
 var imageModule = require("ui/image");
 ```
 
-Back to `populateTemplates`. We need to call `templates.getTemplates` and pass that a callback. getTemplates (as it implies) will get all of the meme templates from the right places. It then calls our callback passing the ImageSource of the meme when it finds one.
+Now let's go back to `populateTemplates()`. Here you need to call `templates.getTemplates()` and pass that a callback. `getTemplates()` (as its name implies) will get all of the meme templates from the right places. It then calls your callback passing the [ImageSource](https://docs.nativescript.org/ApiReference/image-source/README.html) of the meme when it finds one. This callback is where you will create a new `<Image>` element and add it to your `<WrapLayout>`.
 
-This callback is where we will create a new Image element and add it to our WrapLayout.
-
-Let's start by calling `getTemplates` passing our callback:
+Here's what the code looks like. Add this under the `var container = ...` line you currently have in `populateTemplates()`:
 
 ```JavaScript
-templates.getTemplates(function(imageSource){
-});
-```
-
-In that callback, let's create a new Image widget:
-
-```JavaScript
-var image = new imageModule.Image();
-```
-
-Assign its `imageSource` to what we received when our callback was called:
-
-```JavaScript
-image.imageSource = imageSource;
-```
-
-Lastly we just need to add that to our WrapLayout. We got reference to that earlier.
-
-```JavaScript
-container.addChild(image);
-```
-
-Rock On!
-
-**Completed templates.getTemplates**
-
-```JavaScript
-templates.getTemplates(function(imageSource){
+templates.getTemplates(function(imageSource) {
 	var image = new imageModule.Image();
 	image.imageSource = imageSource;
 	container.addChild(image);
 });
 ```
 
+This code calls `getTemplates()` with a callback that creates an `<Image>`, assign its `imageSource` to what you received when your callback was called, and appends that to your `<WrapLayout>`.
+
 **Calling populateTemplates**
 
-Now we just need to call our `populateTemplate` function. Where do you think we should put it? The `navigatedTo` function sounds like a great place.
-
-**Run the application**
-
-Are you getting images? Tap them, What happens? Nothing right? Why?
-
-**Completed populateTemplates **
+Now you just need to call your `populateTemplate` function. Where do you think you should put it? The `navigatedTo()` function sounds like a great place:
 
 ```JavaScript
-function populateTemplates() {
-	var container = _page.getViewById("templateContainer");
-
-	templates.getTemplates(function(imageSource){
-		var image = new imageModule.Image();
-		image.imageSource = imageSource;
-		
-		container.addChild(image);
-	});
-}
+exports.navigatedTo = function(args) {
+    populateTemplates();
+};
 ```
 
+Run your app and you should now have a home screen with a bunch of images on it.
+
+<!--
 ### Step #6 - Tap that image!
 
 Look we have images but they do nothing. Expected, right? After all it's just an image, they have no inherit behaviors and we didn't actually add anything to them. Good time to introduce Gestures!
