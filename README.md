@@ -18,8 +18,11 @@ The first meetup is all about introducing NativeScript. The slides explain what 
 
 ## Meetup #2: Beyond the Basics
 
-Coming soon! Check back in August.
+The second meetup resources are a work in progress. Check back in July for the full list.
+
+* Lab
+    * [Instructions](august/lab.md)
 
 ## Meetup #3: Diving Deep
 
-Coming soon! Check back in September.
+Coming soon! Check back in August.
