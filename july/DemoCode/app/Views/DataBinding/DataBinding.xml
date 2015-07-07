@@ -1,0 +1,25 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+      loaded="loaded"
+      navigatedTo="navigatedTo">
+
+    <ListView items="{{ sessions }}">
+    <ListView.itemTemplate>
+
+        <GridLayout columns="auto,*" rows="*" >
+
+          <!--Image col="0" src="{{ 'https://www.thatconference.com' + Headshot + '?height=100' }}" /-->
+          <!--Image col="0" src="https://www.thatconference.com/cloud/profilephotos/Paul-Shepard-f953ea38-5cde-4407-b642-e476ce2d74ca-635702370644537995.jpg?width=100" /-->
+          
+          <Image col="0" src="{{ $value | urlConverter(HeadShot) }}"/>
+
+          <StackLayout col="1">
+            <Label text="{{ Title }}" textWrap="true" cssClass="sessionTitle"/>
+            <Label text="{{ Speakers[0].FirstName + ' ' + Speakers[0].LastName }}" />
+          </StackLayout>
+
+        </GridLayout>
+
+    </ListView.itemTemplate>
+  </ListView>
+
+</Page>

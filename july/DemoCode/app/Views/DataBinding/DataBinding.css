@@ -1,0 +1,12 @@
+.sessionTitle {
+   color: Blue;
+   margin-bottom: 10;
+}
+
+Label {
+  margin-left: 2;
+}
+
+GridLayout {
+  padding-bottom: 2;
+}
