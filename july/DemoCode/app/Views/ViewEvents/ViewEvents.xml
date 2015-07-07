@@ -1,0 +1,13 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+    loaded="loaded"
+    navigatingTo="navigatingTo"
+    navigatedTo="navigatedTo"
+    navigatingFrom="navigatingFrom"
+    navigatedFrom="navigatedFrom"
+    unloaded="unloaded">
+
+  <StackLayout>
+    <TextView text="{{logMessage}}" />
+  </StackLayout>
+
+</Page>

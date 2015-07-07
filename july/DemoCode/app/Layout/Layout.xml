@@ -1,0 +1,13 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd"
+    loaded="loaded">
+
+  <Page.optionsMenu>
+		<MenuItem text="Add Controls" tap="createControls" />
+	</Page.optionsMenu>
+
+  <ScrollView>
+    <WrapLayout id="myWrapLayout" itemHeight="50" horizontalAlignment="center">
+    </WrapLayout>
+  </ScrollView>
+
+</Page>

@@ -1,0 +1,9 @@
+<Page
+  xmlns="http://www.nativescript.org/tns.xsd"
+  loaded="loaded">
+
+  <StackLayout>
+    <Label text="^^ Native Calls ^^" cssClass="title" />
+  </StackLayout>
+
+</Page>

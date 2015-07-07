@@ -1,0 +1,8 @@
+{
+	"nativescript": {
+		"id": "org.nativescript.SON",
+		"tns-ios": {
+			"version": "1.1.2"
+		}
+	}
+}

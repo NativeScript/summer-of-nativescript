@@ -1,0 +1,13 @@
+<Page
+  xmlns="http://www.nativescript.org/tns.xsd"
+  loaded="pageLoaded">
+
+  <StackLayout>
+    <Label text="Summer of {N}" cssClass="title"/>
+    <Button tap="gotoEvents" text="Events" />
+    <Button tap="gotoLayoutAndControls" text="Layout and Controls" />
+    <Button tap="gotoDataBinding" text="DataBinding" />
+    <Button tap="gotoNativeCall" text="Native Calls" />
+  </StackLayout>
+
+</Page>
