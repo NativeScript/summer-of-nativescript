@@ -6,11 +6,8 @@
     <ListView.itemTemplate>
 
         <GridLayout columns="auto,*" rows="*" >
-
-          <!--Image col="0" src="{{ 'https://www.thatconference.com' + Headshot + '?height=100' }}" /-->
-          <!--Image col="0" src="https://www.thatconference.com/cloud/profilephotos/Paul-Shepard-f953ea38-5cde-4407-b642-e476ce2d74ca-635702370644537995.jpg?width=100" /-->
-          
-          <Image col="0" src="{{ $value | urlConverter(HeadShot) }}"/>
+          <!--Image col="0" src="{{ $value | urlConverter(Speakers) }}"/-->
+          <Image col="0" src="https://www.thatconference.com/cloud/profilephotos/That-Conference-b09e7430-5905-418e-b775-fb08f8e814c8-635675752178054934.png?width=50"/>
 
           <StackLayout col="1">
             <Label text="{{ Title }}" textWrap="true" cssClass="sessionTitle"/>
