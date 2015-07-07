@@ -10,3 +10,7 @@ Label {
 GridLayout {
   padding-bottom: 2;
 }
+
+Image {
+  width: 50;
+}
