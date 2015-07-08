@@ -2,8 +2,6 @@
 
 By [TJ VanToll](http://tjvantoll.com) and [Clark Sell](http://csell.net/)
 
-**Run a meetup, get a NativeScript t-shirt and a pack of NativeScript stickers!**
-
 This repo contains the slides, videos, and hands-on labs for the [Summer of NativeScript](https://www.nativescript.org/summer). If you run into any problems with the labs, feel free to [file an issue](https://github.com/tjvantoll/summer-of-nativescript/issues/new).
 
 ## Meetup #1: Welcome to NativeScript
