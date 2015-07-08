@@ -1,6 +1,6 @@
 # Summer of NativeScript
 
-By [TJ VanToll](http://tjvantoll.com) and [Clark Sell](http://csell.net/)
+> By [TJ VanToll](http://tjvantoll.com) and [Clark Sell](http://csell.net/)
 
 This repo contains the slides, videos, and hands-on labs for the [Summer of NativeScript](https://www.nativescript.org/summer). If you run into any problems with the labs, feel free to [file an issue](https://github.com/tjvantoll/summer-of-nativescript/issues/new).
 
