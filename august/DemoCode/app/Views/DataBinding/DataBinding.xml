@@ -6,7 +6,7 @@
 
       <ListView.itemTemplate>
           <GridLayout columns="auto,*" rows="*" >
-            <Image col="0" src="{{ $value | urlConverter(Speakers) }}"/>
+            <Image col="0" src="{{ $value | urlConverter() }}"/>
 
             <StackLayout col="1">
               <Label text="{{ Title }}" textWrap="true" cssClass="sessionTitle"/>

@@ -39,13 +39,14 @@ function getSessions(){
 var urlConverter = function (session) {
   var fullUrl = "";
 
-  if (session) {
+  if (session.Title) {
     console.log("urlConverter Called", session.Title);
 
     var headshotUrl = session.Speakers[0].HeadShot;
-    fullUrl = "https://www.thatconference.com/" + headshotUrl + "?width=50";
+    fullUrl = "https://www.thatconference.com" + headshotUrl + "?width=50";
+    console.log(fullUrl);
   }
-  
+
   return fullUrl;
 }
 
