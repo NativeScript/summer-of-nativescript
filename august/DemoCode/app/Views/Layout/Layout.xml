@@ -6,7 +6,7 @@
 	</Page.optionsMenu>
 
   <ScrollView>
-    <WrapLayout id="myWrapLayout" itemHeight="25" horizontalAlignment="center">
+    <WrapLayout id="myWrapLayout" itemHeight="50" horizontalAlignment="center">
     </WrapLayout>
   </ScrollView>
 

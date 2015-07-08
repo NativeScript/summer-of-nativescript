@@ -11,7 +11,7 @@ exports.loaded = function(args) {
 		var controller = frameModule.topmost().ios.controller;
 
 		var navigationItem = controller.visibleViewController.navigationItem;
-		navigationItem.setHidesBackButtonAnimated(true, false);
+		navigationItem.setHidesBackButtonAnimated(false, false);
 
 		var navBar = controller.navigationBar;
 		navBar.barTintColor = UIColor.colorWithRedGreenBlueAlpha(0.35, 0.90, 0.0, 1.0);

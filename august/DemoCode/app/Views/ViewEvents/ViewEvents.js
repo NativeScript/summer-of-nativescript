@@ -19,6 +19,7 @@ exports.navigatingTo = function() {
 
 exports.navigatedTo = function() {
   var navigatedContext = _page.navigationContext;
+  console.log("Nav Context", navigatedContext);
 
   setLogMessage("navigatedTo");
   console.log("navigatedTo");

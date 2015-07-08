@@ -36,20 +36,17 @@ function getSessions(){
   return httpModule.request(requestOptions);
 }
 
-
-
-
-
-
-
-
 var urlConverter = function (session) {
+  var fullUrl = "";
+
   if (session) {
     console.log("urlConverter Called", session.Title);
-    console.log(Object.keys(session.Speakers));
+
+    var headshotUrl = session.Speakers[0].HeadShot;
+    fullUrl = "https://www.thatconference.com/" + headshotUrl + "?width=50";
   }
-  //return 'https://www.thatconference.com' + url.Speakers[0].HeadShot + '?width=100';
-  return "foo";
+  
+  return fullUrl;
 }
 
 app.resources["urlConverter"] = urlConverter;
