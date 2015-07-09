@@ -24,7 +24,7 @@ The second meetup is about going about the basics with NativeScript. The slides 
     * [PowerPoint](august/slides.pptx)
     * [PDF](august/slides.pdf)
 * Video
-    * Coming soon!
+    * [YouTube](https://www.youtube.com/watch?v=QzhhCGwO4f8)
 * Lab
     * [Instructions](august/lab.md)
 
