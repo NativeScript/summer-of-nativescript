@@ -1,3 +1,9 @@
-# Summer of NativeScript: September Lab
+# Summer of NativeScript—September
 
-Coming soon
+* Customizable slides
+    * [PowerPoint](slides.pptx)
+    * [PDF](slides.pdf)
+* Video
+    * Coming soon
+* Lab
+    * [Instructions](lab.md)

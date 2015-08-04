@@ -4,6 +4,6 @@
     * [PowerPoint](slides.pptx)
     * [PDF](slides.pdf)
 * Video
-    * Coming soon!
+    * [YouTube](https://www.youtube.com/watch?v=QzhhCGwO4f8)
 * Lab
     * [Instructions](lab.md)
