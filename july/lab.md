@@ -10,7 +10,7 @@ In the Summer of NativeScript labs you'll be building parts of JustMeme: a Nativ
 
 ## Step #1: Choose an Interface
 
-There are two ways to use NativeScript: through its CLI or through [Telerik AppBuilder](http://www.telerik.com/appbuilder). Although the NativeScript framework itself is the same regardless of whether you use the CLI or AppBuilder, the way you interace with NativeScript—how you run your app, how you change configuration files, and so forth—differs based on the interface you choose.
+There are two ways to use NativeScript: through its CLI or through [Telerik AppBuilder](http://www.telerik.com/appbuilder). Although the NativeScript framework itself is the same regardless of whether you use the CLI or AppBuilder, the way you interact with NativeScript—how you run your app, how you change configuration files, and so forth—differs based on the interface you choose.
 
 ### Option #1: NativeScript CLI
 
