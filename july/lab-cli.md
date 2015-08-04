@@ -45,7 +45,7 @@ $ git clone https://github.com/tjvantoll/summer-of-nativescript-lab.git
 Then change into the first lab's directory so you can work with this lab's project:
 
 ```
-$ cd lab-1
+$ cd summer-of-nativescript-lab/lab-1
 ```
 
 ## Step 2: Add platforms
@@ -53,7 +53,6 @@ $ cd lab-1
 Before you can run this app, NativeScript needs to initialize a platform-specific native project for each platform you intend to target. Start by adding the Android platform:
 
 ```
-$ cd summer-of-nativescript-lab-1
 $ tns platform add android
 ```
 
