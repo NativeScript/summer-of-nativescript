@@ -30,4 +30,10 @@ The second meetup is about going about the basics with NativeScript. The slides 
 
 ## Meetup #3: Diving Deep
 
-Coming soon! Check back in August.
+* Customizable slides
+    * [PowerPoint](september/slides.pptx)
+    * [PDF](september/slides.pdf)
+* Video
+    * Coming soon
+* Lab
+    * Coming soon
