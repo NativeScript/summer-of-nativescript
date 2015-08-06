@@ -77,13 +77,13 @@ Going back to our app, think for a minute about what you need to do to create a 
 
 Before diving into the code that writes text on images, which is admittedly a bit complex, let's look at a simple example of how accessing native APIs works.
 
-lalala.
+Paste the following line of code at the very top of `create-meme.js`.
 
 ```js
 var frame = require("ui/frame");
 ```
 
-lalala.
+And then paste the following inside the `exports.loaded()` function:
 
 ```js
 if (frame.topmost().ios) {
@@ -91,3 +91,66 @@ if (frame.topmost().ios) {
 	navBar.barTintColor = UIColor.colorWithRedGreenBlueAlpha(1, 0, 0, 0);
 }
 ```
+
+This code get a reference to the iOS [`UINavigationController`](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html) class and sets its [`barTintColor`](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UINavigationBar_Class/index.html#//apple_ref/occ/instp/UINavigationBar/barTintColor) to an rgb value that represents red. The end result is the navigation bar now appears red instead of the green that your JustMeme app usually uses.
+
+Notice just how easy NativeScript makes accessing these native APIs. There's no abstraction you have to go through to use APIs like [`UIColor`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIColor_Class/)—you just type `UIColor`.
+
+With simple examples like this it's reasonably simple to see how to convert Objective-C code to JavaScript, but things can get complex . When you run into these situations refer to the NativeScript docs, which walk through how to convert Objective-C iOS code and Java Android code into JavaScript code NativeScript can run. (Here are the [iOS docs](http://docs.nativescript.org/runtimes/ios/Overview); here are the [Android docs](http://docs.nativescript.org/runtimes/android/overview)).
+
+Now that you've seen a basic example, let's move onto adding text to images.
+
+## Step 3: Advanced native code usage
+
+Let's start by adding the code that makes the text work and then discuss how it works. First, add the following two lines of code to the top of `create-meme.js`:
+
+```js
+var originalImage;
+var imageManipulation = require("../../shared/image-manipulation/image-manipulation");
+```
+
+Next, replace the current `exports.navigatedTo()` function with the one shown below:
+
+``` js
+exports.navigatedTo = function() {
+	// Save a reference to the original image
+	originalImage = page.navigationContext;
+
+	// Show the starting image on the screen
+	viewModel.set("memeImage", originalImage);
+
+	// Listen for changes to the form controls
+	viewModel.addEventListener(observable.Observable.propertyChangeEvent, function(changes) {
+		// No need to redraw text if the image changed
+		if (changes.propertyName === "memeImage") {
+			return;
+		}
+
+		// Add text to the original image
+		var image = imageManipulation.addText({
+			image: originalImage,
+			topText: viewModel.get("topText"),
+			bottomText: viewModel.get("bottomText"),
+			fontSize: viewModel.get("fontSize"),
+			isBlackText: viewModel.get("isBlackText")
+		});
+
+		// Show the new image, with text applied, on the screen
+		viewModel.set("memeImage", image);
+	});
+};
+```
+
+Let's break down what's happening here, starting with the line below:
+
+```js
+viewModel.addEventListener(observable.Observable.propertyChangeEvent, function(){ ... });
+```
+
+Recall that `viewModel` is an observable that you use bind XML UI components to JavaScript properties.
+
+### Step 4: Using npm modules
+
+### Step 5: Using NativeScript plugins
+
+### Wrapping up
