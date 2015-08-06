@@ -147,7 +147,7 @@ Let's break down what's happening here, starting with the line below:
 viewModel.addEventListener(observable.Observable.propertyChangeEvent, function(){ ... });
 ```
 
-Recall that `viewModel` is an observable that you use bind XML UI components to JavaScript properties.
+To understand this code, recall that `viewModel` is an observable that you use bind XML UI components to JavaScript properties. When any of those properties change—including the two textfields, the font size slider, and the text color switch—...
 
 ### Step 4: Using npm modules
 
