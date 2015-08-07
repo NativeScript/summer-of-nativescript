@@ -8,7 +8,16 @@ In this you're going to extend the basic app you built in the first two labs and
 * Using npm modules
 * Using NativeScript plugins
 
-## Step 0: Getting Setup
+## Table of contents
+
+* [Step 0: Getting setup](#step-0)
+* [Step 1: Add boilerplate](#step-1)
+* [Step 2: Add in native code](#step-2)
+* [Step 3: Advanced native code usage](#step-3)
+* [Step 4: Using npm modules](#step-4)
+* [Step 5: Using NativeScript plugins](#step-5)
+
+<h2 id="step-0">Step 0: Getting setup</h2>
 
 This lab uses the NativeScript CLI for all of its examples. You can [refer back to the first lab](https://github.com/tjvantoll/summer-of-nativescript/blob/master/july/lab-cli.md) if you're having trouble getting the NativeScript CLI up and running.
 
@@ -29,7 +38,7 @@ This screen is the create meme screen, and it's what you'll be building througho
 
 Let's get started.
 
-## Step 1: Add boilerplate
+<h2 id="step-1">Step 1: Add boilerplate</h2>
 
 The first thing you're going to need is a bit of boilerplate code. Start by opening `app/views/create-meme/create-meme.xml` and replace the `<!-- code goes here -->` comment with the following XML:
 
@@ -69,7 +78,7 @@ exports.navigatedTo = function() {
 
 The `loaded()` function takes care of setting the page's `bindingContext`, or the object accessible with the `{{ }}` syntax, and the `navigatedTo()` function sets the view model's `"memeImage"` property, so that `<Image imageSource="{{ memeImage }}" />` now renders. If you run your app again you should see images appearing on the new create meme page.
 
-## Step 2: Add in native code
+<h2 id="step-2">Step 2: Add in native code</h2>
 
 NativeScript's defining feature is that it gives you direct access to iOS and Android APIs in JavaScript directly. This gives your NativeScript app the power to do anything an iOS or Android app can do—in JavaScript.
 
@@ -100,7 +109,7 @@ With simple examples like this it's reasonably simple to see how to convert Obje
 
 Now that you've seen a basic example, let's move onto adding text to images.
 
-## Step 3: Advanced native code usage
+<h2 id="step-3">Step 3: Advanced native code usage</h2>
 
 Let's start by adding the code that makes the text work and then discuss how it works. First, add the following two lines of code to the top of `create-meme.js`:
 
@@ -147,10 +156,44 @@ Let's break down what's happening here, starting with the line below:
 viewModel.addEventListener(observable.Observable.propertyChangeEvent, function(){ ... });
 ```
 
-To understand this code, recall that `viewModel` is an observable that you use bind XML UI components to JavaScript properties. When any of those properties change—including the two textfields, the font size slider, and the text color switch—...
+To understand this code, recall that `viewModel` is an observable that you used to bind XML UI components to JavaScript properties. Therefore when the value of the form controls bound to this object change—including the two textfields, the font size slider, and the text color switch—NativeScript fires a `propertyChangeEvent` that you can subscribe to, which is exactly what the code above does; therefore anytime the user types a letter, or moves the slider, you'll run the code within this `propertyChangeEvent` handler.
 
-### Step 4: Using npm modules
+The magic of actually adding text to the images happens with this call to the `imageManipulation` module:
 
-### Step 5: Using NativeScript plugins
+```
+// Add text to the original image
+var image = imageManipulation.addText({
+    image: originalImage,
+    topText: viewModel.get("topText"),
+    bottomText: viewModel.get("bottomText"),
+    fontSize: viewModel.get("fontSize"),
+    isBlackText: viewModel.get("isBlackText")
+});
+```
 
-### Wrapping up
+To see what's actually happening here, open your app's `app/shared/image-manipulation/image-manipulation.ios.js` and `app/shared/image-manipulation/image-manipulation.android.js` files. You'll see a bunch of Android and iOS APIs that used to actually draw text on images.
+
+Let's experiment with a few of these APIs to see just how easy NativeScript makes it to play with native code. For example find the line in `image-manipulation.ios.js` that uses the `UIFont` class:
+
+```js
+font = UIFont.boldSystemFontOfSize(fontSize);
+```
+
+Try playing with the [`UIFont` API](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIFont_Class/) to see ways you can change the text. For instance, change `boldSystemFontOfSize` to `italicSystemFontOfSize` and run the app again to see what happens.
+
+In `image-manipulation.android.js`, find the line that uses `android.graphics.Typeface`:
+
+```js
+var type = android.graphics.Typeface.create("Helvetica",
+	android.graphics.Typeface.BOLD);
+```
+
+Try playing with the [Android Typeface API](http://developer.android.com/reference/android/graphics/Typeface.html) to display text various ways. For instance, try changing the font family from `"Helvetica"`, or change `android.graphics.Typeface.BOLD` to `android.graphics.Typeface.ITALIC`.
+
+When you're ready, and when the meme text matches your personal preferences, let's move onto see how we can use npm modules in this app.
+
+<h2 id="step-4">Step 4: Using npm modules</h2>
+
+<h2 id="step-5">Step 5: Using NativeScript plugins</h2>
+
+## Wrapping up
