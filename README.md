@@ -36,4 +36,4 @@ The second meetup is about going about the basics with NativeScript. The slides 
 * Video
     * Coming soon
 * Lab
-    * Coming soon
+    * [Instructions](september/lab.md)
