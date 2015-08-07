@@ -25,7 +25,7 @@ To start this lab run the following commands:
 
 ```
 $ git clone https://github.com/tjvantoll/summer-of-nativescript-lab.git
-$ cd lab-3-start
+$ cd lab-3/start
 ```
 
 From there run `tns platform add android` and `tns platform add ios` (if you're on a Mac) so you're ready run your app on both platforms. If you run the app (`tns run ios --emulator` or `tns run android --emulator`) and click on an image you should see the screen below:
@@ -194,6 +194,110 @@ When you're ready, and when the meme text matches your personal preferences, let
 
 <h2 id="step-4">Step 4: Using npm modules</h2>
 
+If you're on a low-end device you may have noticed a problem with our text implementation: if you continuously slide the create meme page's slider, your code generates a *lot* of images in a short amount of time. Some devices are able to handle this load, but many are not.
+
+The JavaScript world has a well established solution to this problem known as [debouncing](http://davidwalsh.name/javascript-debounce-function). Essentially, instead calling a functioning continuously, a debounced function is only called every n milliseconds. In our case, debouncing the image generation will greatly reduce the number of images generated, and improve this app's performance substantially.
+
+Instead of writing our own debounce function, which can be a be tricky, it's far easier to simply install a library that has a debounce function already implemented. In this lab we'll use [lodash](https://www.npmjs.com/package/lodash).
+
+Start by installing lodash from npm in the root of your application (aka you should be in the `lab-3/start` folder).
+
+```
+$ npm install lodash --save
+```
+
+This installs lodash in your NativeScript app, and stores your project's dependency on lodash in your app's `package.json` file. Next, add the following code to the top of your `create-meme.js` file:
+
+```js
+var _ = require("lodash");
+```
+
+Next, paste the following code at the bottom of `create-meme.js`:
+
+``` js
+var generateImage = _.debounce(function() {
+	var image = imageManipulation.addText({
+		image: originalImage,
+		topText: viewModel.get("topText"),
+		bottomText: viewModel.get("bottomText"),
+		fontSize: viewModel.get("fontSize"),
+		isBlackText: viewModel.get("isBlackText")
+	});
+	viewModel.set("memeImage", image);
+}, 10, { leading: true });
+```
+
+This calls lodash's debounce function, which returns a function that you can call continuously, but will only actually run every 10 milliseconds (because of the second argument you pass to `_.debounce()`). Succinctly, using this function guarantees that we only generate an image every 10 milliseconds.
+
+To use this function, change your `exports.navigatedTo()` function to use the code below:
+
+```js
+exports.navigatedTo = function() {
+	originalImage = page.navigationContext;
+	viewModel.set("memeImage", page.navigationContext);
+	viewModel.addEventListener(observable.Observable.propertyChangeEvent, function(changes) {
+		if (changes.propertyName === "memeImage") {
+			return;
+		}
+		generateImage();
+	});
+};
+```
+
+Finally, try out this code to see if you can see a performance difference. It's a bit easier to see exactly what this code is doing if you try changing `10` to a far larger value, such as `1000`.
+
+This example shows just how simple it is to use npm modules in your NativeScript apps. That ease of use extends to the next NativeScript you're going to try out: NativeScript plugins.
+
 <h2 id="step-5">Step 5: Using NativeScript plugins</h2>
 
-## Wrapping up
+NativeScript plugins are npm modules that have the added ability to run native code. As such, using a NativeScript plugin is pretty much exactly like using any other npm module. The one difference is in how you install plugins, as installing NativeScript plugins requires the `tns plugin add` command.
+
+Let's see how NativeScript plugins work by adding the [NativeScript social share](https://github.com/tjvantoll/nativescript-social-share) plugin to JustMeme. Start by running the following command in the root of your project:
+
+```
+$ tns plugin add nativescript-social-share
+```
+
+Like `npm install`, `tns plugin add` retrieves the necessary code from npm, and saves the new dependency in your project's `package.json` file. However, the `tns plugin add` command does a few additional things, such as processing any iOS and Android libraries and configuration files that the plugin uses. For instance the [NativeScript flashlight plugin](https://github.com/tjvantoll/nativescript-flashlight) uses an `AndroidManifest.xml` snippet to set the appropriate Android permissions needed for an app to use the camera.
+
+To use the social share plugin start by adding the following line of code to the top of `create-meme.js`:
+
+```js
+var socialShare = require("nativescript-social-share");
+```
+
+This imports the social share plugin's JavaScript module so you can use it. To do so, first you're going to add a new UI component that gives the user the ability to share.
+
+Return to `create-meme.xml` and locate the `<Page.actionBar>` UI component. Replace the current `<Page.actionBar>` with the code shown below:
+
+```xml
+<Page.actionBar>
+	<ActionBar title="Create New">
+		<ActionBar.actionItems>
+			<ActionItem text="Share" tap="share" ios.position="right" />
+		</ActionBar.actionItems>
+	</ActionBar>
+</Page.actionBar>
+```
+
+This adds a share button on the top-right corner of the create meme page. The `<ActionItem>` includes a `tap` handler that calls a `share()` method, so your next step is to create that function.
+
+Return to `create-meme.js` and paste the following function at the bottom of the file:
+
+```js
+exports.share = function() {
+	socialShare.shareImage(viewModel.get("memeImage"));
+};
+```
+
+Run the app and you should now have the ability to share memes using your device's native sharing widget!
+
+Overall, the ability to use npm modules and NativeScript plugins greatly expands the number of things you're able to do in a NativeScript app. Need utility functionality for dealing with arrays and objects? Use [lodash](https://www.npmjs.com/package/lodash) or [underscore](https://www.npmjs.com/package/underscore). Need to compose emails in your app? Try out the [NativeScript email plugin](https://www.npmjs.com/package/nativescript-email).
+
+If you're looking for plugins start by doing a [search for NativeScript on npm](https://www.npmjs.com/search?q=nativescript). If you're looking for a NativeScript plugin that doesn't exist you can [request it on our ideas portal](https://nativescript.ideas.aha.io/), or, you can take a stab at [creating the plugin yourself](https://docs.nativescript.org/plugins). And stay tuned for our [plugin marketplace](http://plugins.telerik.com/), where we'll be listing curated NativeScript plugins you can use in your apps.
+
+## Where to go from here?
+
+Congratulations! You've reached the end of the Summer of NativeScript. If you've enjoyed this lab format you might be interested in the [NativeScript quick-start guide](https://github.com/NativeScript/quick-start), which also walks you through the process of building a NativeScript app.
+
+If you any feedback about the Summer of NativeScript, feel free to reach out to me at [tj.vantoll@telerik.com](mailto:tj.vantoll@telerik.com), or [file issues on this project's GitHub repo](https://github.com/NativeScript/summer-of-nativescript/issues). Thanks!
