@@ -30,6 +30,8 @@ The second meetup is about going about the basics with NativeScript. The slides 
 
 ## Meetup #3: Diving Deep
 
+The third meetup is about diving deep into the advanced features of NativeScript. The slides explain access iOS and Android APIs, using npm modules, NativeScript plugins, and more.
+
 * Customizable slides
     * [PowerPoint](september/slides.pptx)
     * [PDF](september/slides.pdf)
