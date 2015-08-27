@@ -15,7 +15,10 @@ In this lab you're going to build upon the simple splash screen you built in [th
 
 In the first lab you learned about [the difference between using NativeScript via the CLI or via AppBuilder](https://github.com/tjvantoll/summer-of-nativescript/blob/master/july/lab.md#step-1-choose-an-interface). For this lab the interface you use doesn't matter, other the how you load the starting repository.
 
-* **CLI users only**: [Clone the lab repo](https://github.com/tjvantoll/summer-of-nativescript/blob/master/july/lab-cli.md#step-1-clone-the-lab-repo) and `cd` into the `lab-2/start` directory.
+* **CLI users only**:
+	* [Clone the lab repo](https://github.com/tjvantoll/summer-of-nativescript/blob/master/july/lab-cli.md#step-1-clone-the-lab-repo)
+	* `cd` into the `lab-2/start` directory
+	* Run `tns platform add ios` and/or `tns platform add android`.
 * **AppBuilder users only**: Clone <https://github.com/NativeScript/NativeScript-NEXT-Workshop-Lab2-Start> in AppBuilder. ([Here are the instructions](https://github.com/tjvantoll/summer-of-nativescript/blob/master/july/lab-appbuilder.md#step-1-clone-the-repo) for how to do that in case you've forgotten.)
 
 Regardless of the approach you take you should be in a folder that has an `app` directory with the sample code needed to complete this lab. If you need to remember how to refresh your app after you make changes, [refer back to the first lab](https://github.com/tjvantoll/summer-of-nativescript/blob/master/july/lab.md).
