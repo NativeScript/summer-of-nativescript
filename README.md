@@ -36,6 +36,6 @@ The third meetup is about diving deep into the advanced features of NativeScript
     * [PowerPoint](september/slides.pptx)
     * [PDF](september/slides.pdf)
 * Video
-    * Coming soon
+    * [YouTube](https://www.youtube.com/watch?v=oyqHlCxvq78)
 * Lab
     * [Instructions](september/lab.md)
