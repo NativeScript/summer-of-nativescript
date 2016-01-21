@@ -4,7 +4,7 @@
 
 This repo contains the slides, videos, and hands-on labs for the [Summer of NativeScript](https://www.nativescript.org/summer). If you run into any problems with the labs, feel free to [file an issue](https://github.com/tjvantoll/summer-of-nativescript/issues/new).
 
-> **Note**: **The labs in this repo are no longer maintained.** But don’t despair! The NativeScript team provides a far-more-comprehensive [Getting Started Guide](http://docs.nativescript.org/start/getting-started) for getting you up to speed with NativeScript. The guide is perfect for classrooms, workshops, and self-paced learning.
+> **WARNING**: **The labs in this repo are no longer maintained.** But don’t despair! The NativeScript team provides a far-more-comprehensive [Getting Started Guide](http://docs.nativescript.org/start/getting-started) for getting you up to speed with NativeScript. The guide is perfect for classrooms, workshops, and self-paced learning.
 
 ## Meetup #1: Welcome to NativeScript
 
